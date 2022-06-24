@@ -3,9 +3,7 @@ require('dotenv/config.js');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
-
-const MONGO_URL = `mongodb+srv://admin:${MONGO_PASSWORD}@portfolio.of5cp.mongodb.net/?retryWrites=true&w=majority`;
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose
   .connect(MONGO_URL)

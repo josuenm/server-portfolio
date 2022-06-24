@@ -16,6 +16,10 @@ const Auth = (req, res, next) => {
         res.status(401).json({ error: 'Unauthorized: invalid token' });
       } else {
         req.email = decoded.email;
+        console.log({
+          decodedEmail: decoded.email,
+          reqEmail: req.email,
+        });
         if (req.email === USER_EMAIL) {
           req.user = { email: USER_EMAIL };
           next();

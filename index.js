@@ -5,13 +5,15 @@ const dashboardRouter = require('./src/routes/dashboard');
 const projectRouter = require('./src/routes/project');
 const cors = require('cors');
 
+const CORS_URL = process.env.CORS_URL;
+
 const app = express();
 app.use(express.json());
 
 app.use(
   cors({
     credentials: false,
-    origin: 'https://josuenm-portfolio.vercel.app',
+    origin: CORS_URL,
   })
 );
 
